@@ -1,0 +1,4 @@
+{
+    "phpcs.enable": false,
+    "eslint.enable": false
+}
