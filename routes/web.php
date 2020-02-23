@@ -9,6 +9,7 @@ Route::redirect('/', 'login');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('leads/list', [LeadController::class, 'index']);
     Route::get('leads/add', [LeadController::class, 'create']);
     Route::post('leads/save', [LeadController::class, 'store']);
 });

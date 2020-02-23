@@ -8,6 +8,18 @@ use Illuminate\Http\Request;
 
 class LeadController extends Controller
 {
+    public function index()
+    {
+        $leads = Lead::query()
+            ->where('branch_id', 1)
+            ->orderByDesc('id')
+            ->get();
+
+            return Inertia::render('Leads/Index', [
+                'leads' => $leads
+            ]);
+    }
+
     public function create()
     {
         return Inertia::render('Leads/LeadAdd');
